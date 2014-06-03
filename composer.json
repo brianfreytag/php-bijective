@@ -1,0 +1,24 @@
+{
+    "name": "brianfreytag/php-bijective",
+    "type": "library",
+    "description": "Encodes any integer into a base(n) string",
+    "keywords": ["php", "bijective", "base_convert"],
+    "homepage": "http://www.github.com/brianfreytag/php-bijective",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Freytag",
+            "email": "brian@idltg.in",
+            "homepage": "http://freytag.technology"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=3.7"
+    },
+    "autoload": {
+        "psr-0": { "Bijective": "src/" }
+    }
+}
