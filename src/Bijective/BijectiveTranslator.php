@@ -5,7 +5,7 @@ namespace Bijective;
 /**
  * @author Brian Freytag <brian@idltg.in>
  */
-class Bijective implements BijectiveInterface
+class BijectiveTranslator implements BijectiveInterface
 {
     /** @var string */
     private $alphabet;
@@ -41,7 +41,7 @@ class Bijective implements BijectiveInterface
 
         while ($int > 0) {
             $string .= $this->alphabet[($int % $base)];
-            
+
             $int = floor($int / $base);
         }
 

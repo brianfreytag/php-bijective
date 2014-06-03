@@ -17,11 +17,11 @@ After installing the Bijective library, simply create a new instance of the Bije
 ```php
 <?php
 
-use Bijective\Bijective;
+use Bijective\BijectiveTranslator;
 
 $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-$bijective = new Bijective($alphabet);
+$bijective = new BijectiveTranslator($alphabet);
 
 $encoded = $bijective->encode(123); // Returns ct
 $decoded = $bijective->decode('ct'); // Returns 123
