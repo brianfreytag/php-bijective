@@ -28,8 +28,8 @@ class BijectiveTranslator implements BijectiveInterface
      */
     public function encode($int)
     {
-        if (!is_int($int)) {
-            throw new \InvalidArgumentException('You can only encode an integer');
+        if (!ctype_digit($int)) {
+            throw new \InvalidArgumentException('You can only encode a number');
         }
 
         if ($int == 0) {
