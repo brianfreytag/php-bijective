@@ -5,7 +5,7 @@ namespace Bijective;
 /**
  * @author Brian Freytag <brian@idltg.in>
  */
-class BijectiveTranslator implements BijectiveInterface
+class BijectiveTranslator implements BijectiveTranslatorInterface
 {
     /** @var string */
     private $alphabet;

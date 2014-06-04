@@ -5,7 +5,7 @@ namespace Bijective;
 /**
  * @author Brian Freytag <brian@idltg.in>
  */
-interface BijectiveInterface
+interface BijectiveTranslatorInterface
 {
     /**
      * @param $int
