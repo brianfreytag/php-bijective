@@ -2,6 +2,8 @@
 
 namespace Bijective;
 
+use Bijective\Exception\BijectiveException;
+
 /**
  * @author Brian Freytag <brian@idltg.in>
  */
@@ -13,7 +15,7 @@ class BijectiveTranslator implements BijectiveTranslatorInterface
     /**
      * @param $alphabet
      */
-    public function __construct($alphabet)
+    public function __construct($alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
     {
         $this->alphabet = $alphabet;
     }
@@ -23,13 +25,17 @@ class BijectiveTranslator implements BijectiveTranslatorInterface
      *
      * @param integer $int
      *
-     * @throws \InvalidArgumentException
+     * @throws BijectiveException
      * @return string
      */
     public function encode($int)
     {
+        if (is_int($int)) {
+            $int = (string) $int;
+        }
+
         if (!ctype_digit($int)) {
-            throw new \InvalidArgumentException('You can only encode a number');
+            throw new BijectiveException('You can only encode a number');
         }
 
         if ($int == 0) {
@@ -53,13 +59,13 @@ class BijectiveTranslator implements BijectiveTranslatorInterface
      *
      * @param $str
      *
-     * @throws \InvalidArgumentException
+     * @throws BijectiveException
      * @return int
      */
     public function decode($str)
     {
         if (!is_string($str)) {
-            throw new \InvalidArgumentException('You can only decode a string');
+            throw new BijectiveException('You can only decode a string');
         }
 
         $int = 0;
